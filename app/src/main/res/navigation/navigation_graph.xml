@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.esiea.navigationapp.MainFragment"
+        tools:layout="@layout/fragment_main"
+        android:label="main_fragment">
+        <action
+            android:id="@+id/action_mainFragment_to_secondFragment"
+            app:destination="@id/secondFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/secondFragment"
+        android:name="com.esiea.navigationapp.SecondFragment"
+        tools:layout="@layout/fragment_second"
+        android:label="second_fragment">
+        <action
+            android:id="@+id/action_secondFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+        <argument
+            android:name="message"
+            app:argType="string"
+            android:defaultValue="No message" />
+    </fragment>
+
+</navigation>
